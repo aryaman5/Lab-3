@@ -25,12 +25,12 @@ public class WebScraper {
         String script = urlToString("http://erdani.com/tdpl/hamlet.txt");
         String[] newscript = script.split("\\s+");
         System.out.println((newscript.length));
-        String lookfor = "Prince";
+        String lookfor = "the";
         String lookfor1 = lookfor.toLowerCase();
         String lookfor2 = lookfor.toUpperCase();
         int howMany = 0;
         for (int counter = 0; counter < newscript.length; counter++) {
-            if (newscript[counter].equals(lookfor) || newscript[counter].equals(lookfor1) || newscript[counter].equals(lookfor2)) {
+            if (newscript[counter].startsWith(lookfor) || newscript[counter].startsWith(lookfor1) || newscript[counter].startsWith(lookfor2)) {
                 howMany += 1;
             }
         }
